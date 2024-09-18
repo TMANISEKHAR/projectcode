@@ -1,0 +1,33 @@
+public class Book {
+    private String title;
+    private String author;
+    private int publishedYear;
+    private String[] genres;
+    private boolean available;
+
+    public Book(String title, String author, int publishedYear, String[] genres, boolean available) {
+        this.title = title;
+        this.author = author;
+        this.publishedYear = publishedYear;
+        this.genres = genres;
+        this.available = available;
+    }
+
+    public void printDetails() {
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("Published Year: " + publishedYear);
+        System.out.print("Genres: ");
+        for (String genre : genres) {
+            System.out.print(genre + " ");
+        }
+        System.out.println("\nAvailable: " + (available ? "Yes" : "No"));
+    }
+
+    public static void main(String[] args) {
+        String[] genres = {"Fiction", "Classic"};
+        Book book = new Book("The Great Gatsby", "F. Scott Fitzgerald", 1925, genres, true);
+        book.printDetails();
+    }
+}
+
